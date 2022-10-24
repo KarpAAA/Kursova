@@ -12,7 +12,7 @@ public class TaskDialog extends JDialog {
 
         this.setTitle(td.getTitle());
         this.setLayout(null);
-        this.setSize(new Dimension(325, 180));
+        this.setSize(new Dimension(600, 180));
         this.setBackground(Color.WHITE);
         this.setLocation(235, 205);
 
@@ -25,7 +25,7 @@ public class TaskDialog extends JDialog {
 
         this.setTitle(td.getTitle());
         this.setLayout(null);
-        this.setSize(new Dimension(325, 180));
+        this.setSize(new Dimension(600, 180));
         this.setBackground(Color.WHITE);
         this.setLocation(235, 205);
 
@@ -38,12 +38,12 @@ public class TaskDialog extends JDialog {
 
         JLabel labelText = new JLabel();
         labelText.setText(td.getTask());
-        labelText.setBounds(10, 10, 290, 60);
-        labelText.setFont(new Font(Font.DIALOG, Font.BOLD, 14));
+        labelText.setBounds(10, 10, 550, 60);
+        labelText.setFont(new Font(Font.DIALOG, Font.BOLD, 12));
         labelText.setHorizontalTextPosition(SwingConstants.CENTER);
 
         JButton confirmButton = new JButton("Do task");
-        confirmButton.setBounds(10, 80, 290, 40);
+        confirmButton.setBounds(10, 80, 550, 40);
         confirmButton.setBackground(mainColor);
         confirmButton.setForeground(Color.WHITE);
         confirmButton.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -61,17 +61,17 @@ public class TaskDialog extends JDialog {
 
         JLabel labelText = new JLabel();
         labelText.setText(td.getTask());
-        labelText.setBounds(10, 10, 290, 30);
-        labelText.setFont(new Font(Font.DIALOG, Font.BOLD, 16));
+        labelText.setBounds(10, 10, 550, 30);
+        labelText.setFont(new Font(Font.DIALOG, Font.BOLD, 12));
         labelText.setHorizontalTextPosition(SwingConstants.CENTER);
 
         JTextField tAdditionalField = new JTextField();
-        tAdditionalField.setBounds(10, 50 , 290 , 30);
+        tAdditionalField.setBounds(10, 50 , 550 , 30);
 
         this.add(tAdditionalField);
 
         JButton confirmButton = new JButton("Do task");
-        confirmButton.setBounds(10, 80, 290, 40);
+        confirmButton.setBounds(10, 80, 550, 40);
         confirmButton.setBackground(mainColor);
         confirmButton.setForeground(Color.WHITE);
         confirmButton.setHorizontalTextPosition(SwingConstants.CENTER);
