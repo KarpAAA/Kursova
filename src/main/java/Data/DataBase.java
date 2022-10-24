@@ -15,7 +15,7 @@ public class DataBase {
 
     }
 
-    public static DataBase getInstance(){
+    public static synchronized DataBase getInstance(){
         if(instance == null) instance = new DataBase();
         return instance;
     }

@@ -1,5 +1,7 @@
 package Dialogs;
 
+import Utilities.Validator;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -76,6 +78,14 @@ public class TaskDialog extends JDialog {
         confirmButton.setFocusable(false);
         confirmButton.addActionListener(e -> {
             if(!tAdditionalField.getText().isEmpty()){
+                try{
+                    if(Validator.isNumeric(tAdditionalField.getText()))throw new IllegalArgumentException();
+                }
+                catch(IllegalArgumentException exception){
+                    exception.printStackTrace();
+                    this.dispose();
+                    return;
+                }
                 dlTextField.performTask(tAdditionalField.getText());
                 this.dispose();
             }

@@ -1,6 +1,7 @@
 package Dialogs;
 
 import Data.Car;
+import Utilities.Validator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -84,21 +85,37 @@ public class AddDialog extends JDialog{
     }
 
     private boolean fieldCheck() {
-        if (tModel.getText().isEmpty() || tColor.getText().isEmpty()
-                || tPrice.getText().isEmpty() || tEfficiency.getText().isEmpty()) {
+
+        double price;
+        double efficiency;
+        try {
+            if (tModel.getText().isEmpty() || tColor.getText().isEmpty()
+                    || tPrice.getText().isEmpty() || tEfficiency.getText().isEmpty()) {
+                throw new IllegalArgumentException();
+            }
+
+            price = Double.parseDouble(tPrice.getText());
+            efficiency = Double.parseDouble(tEfficiency.getText());
+
+            if(Validator.isNumeric(tModel.getText())|| Validator.isNumeric(tColor.getText()))
+                throw new IllegalArgumentException();
+
+
+        }
+        catch (IllegalArgumentException e){
+            e.printStackTrace();
             return false;
-        } else if (Double.valueOf(tPrice.getText()).isNaN()) {
-            return false;
-        } else if (Double.valueOf(tEfficiency.getText()).isNaN()) {
-            return false;
-        } else return true;
+        }
+
+
+        return true;
 
     }
 
     private Car formingObject() {
-        String mark = tModel.getText();
-       // mark = mark.replace(mark.charAt(0), Character.toUpperCase(mark.charAt(0)));
-        return new Car(mark,
+
+
+        return new Car(tModel.getText(),
                 tColor.getText(),
                 Double.parseDouble(tPrice.getText()),
                 Double.parseDouble(tEfficiency.getText()));
