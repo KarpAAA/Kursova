@@ -50,13 +50,13 @@ public class SortingClass {
                     array.set(k++, rightArray.get(j++));
                 }
             } else if (s == SortByEnum.COLOR) {
-                if ((leftArray.get(i).color()).compareTo(rightArray.get(j).color()) <= 0) {
+                if ((leftArray.get(i).color()).compareToIgnoreCase(rightArray.get(j).color()) <= 0) {
                     array.set(k++, leftArray.get(i++));
                 } else {
                     array.set(k++, rightArray.get(j++));
                 }
             } else if (s == SortByEnum.MARK) {
-                if ((leftArray.get(i).mark()).compareTo(rightArray.get(j).mark()) <= 0) {
+                if ((leftArray.get(i).mark()).compareToIgnoreCase(rightArray.get(j).mark()) <= 0) {
                     array.set(k++, leftArray.get(i++));
                 } else {
                     array.set(k++, rightArray.get(j++));

@@ -49,7 +49,7 @@ public class TasksClass {
         }
 
         return resultList;
-       // return markList.stream().map( str -> new Car(str,"",0,0)).collect(Collectors.toList());
+
     }
 
     public static List<Car> f4(List<Car> list, String value) {
