@@ -1,6 +1,7 @@
 package Main;
 
 import Data.Car;
+import Data.DataSearch;
 import Dialogs.*;
 import FormParts.IconButton;
 import FormParts.Table;
@@ -133,7 +134,11 @@ public class WindowForm {
 
         JButton buttonPLus = new IconButton(iconPlus, new Rectangle(350, 105, 42, 46));
         buttonPLus.addActionListener((e) -> new AddDialog(mainColor, car -> {
-            if (car != null) table.addCarToTable(car);
+            if (car != null){
+                table.addCarToTable(car);
+                DataSearch ds = DataSearch.getInstance();
+                ds.addCar(car);
+            }
 
         }));
 
